@@ -1,0 +1,32 @@
+<style type="text/css">
+body {  line-height: 1em; }
+#kumpulan-tugas-novi-adi {
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 12px;
+	margin: 20px;
+	width: 480px;
+	text-align: left;
+	border-collapse: collapse;
+}
+#kumpulan-tugas-novi-adi th {
+	font-size: 14px;
+	font-weight: normal;
+	padding: 12px 15px;
+	color: #039;
+}
+#kumpulan-tugas-novi-adi td {
+	padding: 10px 15px;
+	color: #669;
+	border-top: 1px solid #e8edff;
+}
+.oce-first {
+ background: #d0dafd;
+	border-right: 10px solid transparent;
+	border-left: 10px solid transparent;
+}
+#kumpulan-tugas-novi-adi tr:hover td {
+	color: #339;
+	background: #eff2ff;
+}
+
+</style>

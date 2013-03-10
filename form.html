@@ -1,0 +1,138 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.4.js"></script>
+	<script type="text/javascript" src="js/jquery.maskedinput.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+  	    $(':input:not([type="submit"])').each(function() {
+	        $(this).focus(function() {
+	            $(this).addClass('hilite');
+	        }).blur(function() {
+	            $(this).removeClass('hilite');});
+	     });
+      });  
+    </script>    
+    <style>   
+      .hilite{
+	       background-color: #FDECB2;
+      }
+    </style>   
+	<script type="text/javascript">
+      $(document).ready(function() {
+        $("#tgl").mask("99/99/9999")
+        $("#telp_skrg").mask("(9999) 999-9999")
+		$("#telp_asal").mask("(9999) 999-9999")
+		$("#hp").mask("+(62) 99999999999")
+      });
+    </script>
+	<script type="text/javascript">
+      $(document).ready(function() {
+            $('#deskripsi_diri').keyup(function() {
+                var len = this.value.length;
+                if (len >= 150) {
+                    this.value = this.value.substring(0, 150);
+                }
+                $('#hitung').text(150 - len);
+            });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="demo" style="width: 600px;">
+    <form>
+	<h1 align="center">CURRICULUM VITAE</h1>
+	   <div><label for="nama">Nama</label>
+		      <input type="text" name="nama" id="nama">
+	   </div>
+	   <div><label for="tempat">Tempat Lahir</label>
+		      <input type="text" name="tempat" id="tempat">
+	   </div>
+	   <div><label for="tempat">Tanggal Lahir</label>
+		      <input type="text" id="tgl" size="14">
+	   </div>
+	   <div><label for="agama">Status Perkawinan</label>
+		      <select id="status" name="status">
+			      <option value="0">-- Pilih Status --</option>
+			      <option value="Belum Menikah">Belum Menikah</option>
+			      <option value="Menikah">Menikah</option>
+			      <option value="Duda">Duda</option>
+			      <option value="Janda">Janda</option>
+		      </select>
+	   </div>
+	   <div><label for="agama">Agama</label>
+		      <select id="agama" name="agama">
+			      <option value="0">-- Pilih Agama --</option>
+			      <option value="islam">Islam</option>
+			      <option value="katolik">Katolik</option>
+			      <option value="protestan">Protestan</option>
+			      <option value="hindu">Hindu</option>
+			      <option value="budha">Budha</option>
+		      </select>
+	   </div>
+	   <div><label for="alamat_skrg">Alamat Sekarang</label>
+		      <input type="text" name="alamat_skrg" id="alamat_skrg">
+	   </div>
+	   <div><label for="telp_skrg">Nomor Telepon</label>
+		      <input type="text" id="telp_skrg" size="14">
+	   </div>
+	   <div><label for="alamat_asal">Alamat Asal</label>
+		      <input type="text" name="alamat_asal" id="alamat_asal">
+	   </div>
+	   <div><label for="telp_asal">Nomor Telepon</label>
+		      <input type="text" id="telp_asal" size="14">
+	   </div>
+	   <div><label for="hp">Nomor HP</label>
+		      <input type="text" id="hp" size="14">
+	   </div>
+	   <div><label for="kelamin1">Kelamin</label>
+		      <input type="radio" name="kelamin" id="kelamin1" value="P"> Pria
+		      <input type="radio" name="kelamin" id="kelamin2" value="W"> Wanita
+	   </div>
+	   <div><label for="email">Email</label>
+		      <input type="text" name="email" id="email">
+	   </div>
+	   <div><label for="hobi">Hobi</label>
+		      <input type="checkbox"  id="hobi" name="hobi1"> Baca 
+		      <input type="checkbox"  id="hobi" name="hobi2"> Nonton 
+		      <input type="checkbox"  id="hobi" name="hobi3"> Musik
+	   </div>
+	   <div><label for="pendidikan_terakhir">Pendidikan Terakhir</label>
+		      <select id="pendidikan_terakhir" name="pendidikan_terakhir">
+			      <option value="0">-- Pendidikan Terakhir --</option>
+			      <option value="SD">SD</option>
+			      <option value="SMP">SMP/MI</option>
+			      <option value="SMA/SMK/MAN">SMA/SMK/MAN</option>
+			      <option value="PT">PT</option>
+		      </select>
+	   </div>
+	   <div><label for="riwayat_pend">Riwayat Pendidikan</label>
+		      <textarea id="riwayat_pend" name="riwayat_pend" cols="38" rows="8"></textarea>
+	   </div>
+	   <div><label for="pengalaman_kerja">Pengalaman Kerja</label>
+		      <textarea id="pengalaman_kerja" name="pengalaman_kerja" cols="38" rows="8"></textarea>
+	   </div>
+	   <div><label for="sertifikat">Sertifikat/Penghargaan</label>
+		      <textarea id="sertifikat" name="sertifikat" cols="38" rows="8"></textarea>
+	   </div>
+	   <div><label for="pengalaman_org">Pengalaman Organisasi</label>
+		      <textarea id="pengalaman_org" name="pengalaman_org" cols="38" rows="8"></textarea>
+	   </div>
+	   <div><label for="data_keluarga">Data Keluarga</label>
+		      <textarea id="data_keluarga" name="data_keluarga" cols="38" rows="8"></textarea>
+	   </div>
+	   <div><label for="deskripsi_diri">Deskripsi Diri</label>
+		      <textarea id="deskripsi_diri" name="deskripsi_diri" cols="38" rows="8"></textarea>
+			  
+	   </div>
+	   <div><label for="tes">""</label>
+		      <span id="hitung">150</span>  Karakter Tersisa.
+	   </div>
+	   <input type="submit" value="Proses">
+    </form>
+    </div>
+  </body>
+</html>
+
+
+

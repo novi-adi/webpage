@@ -1,0 +1,185 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+	<link rel="stylesheet" href="css/table.css" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.4.js"></script>
+	<script type="text/javascript" src="js/jquery.maskedinput.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+  	    $(':input:not([type="submit"])').each(function() {
+	        $(this).focus(function() {
+	            $(this).addClass('hilite');
+	        }).blur(function() {
+	            $(this).removeClass('hilite');});
+	     });
+      });  
+    </script>    
+    <style>   
+      .hilite{
+	       background-color: #FDECB2;
+      }
+    </style>   
+	<script type="text/javascript">
+      $(document).ready(function() {
+        $("#tgl").mask("99/99/9999")
+        $("#telp_skrg").mask("(9999) 999-9999")
+		$("#telp_asal").mask("(9999) 999-9999")
+		$("#hp").mask("+(62) 99999999999")
+      });
+    </script>
+	<script type="text/javascript">
+      $(document).ready(function() {
+            $('#deskripsi_diri').keyup(function() {
+                var len = this.value.length;
+                if (len >= 150) {
+                    this.value = this.value.substring(0, 150);
+                }
+                $('#hitung').text(150 - len);
+            });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="demo" style="width: 600px;">
+    <form>
+	<h1 align="center">CURRICULUM VITAE</h1>
+	   <div><label for="nama">Nama</label>
+		      NOVI ADI TRISWANDI
+	   </div>
+	   <div><label for="tempat">Tempat Lahir</label>
+		      Batu
+	   </div>
+	   <div><label for="tempat">Tanggal Lahir</label>
+		      03/11/1992
+	   </div>
+	   <div><label for="agama">Status Perkawinan</label>
+		      Belum Menikah
+	   </div>
+	   <div><label for="agama">Agama</label>
+		      Islam
+	   </div>
+	   <div><label for="alamat_skrg">Alamat Sekarang</label>
+		      Jl. Anjasmoro no. 46 Batu
+	   </div>
+	   <div><label for="telp_skrg">Nomor Telepon</label>
+		      (0341) 5446644
+	   </div>
+	   <div><label for="alamat_asal">Alamat Asal</label>
+		      Jl. Anjasmoro no. 46 Batu
+	   </div>
+	   <div><label for="telp_asal">Nomor Telepon</label>
+		      (0341) 5446644
+	   </div>
+	   <div><label for="hp">Nomor HP</label>
+		      (+62)85731452517
+	   </div>
+	   <div><label for="kelamin1">Kelamin</label>
+		      Pria
+	   </div>
+	   <div><label for="email">Email</label>
+		      icambing@gmail.com
+	   </div>
+	   <div><label for="hobi">Hobi</label>
+		      Nonton, musik.
+	   </div>
+	   <div><label for="pendidikan">Riwayat Pendidikan</label>
+	   </div>
+	   <table id="one-column-emphasis">
+		<colgroup>
+		 <col class="oce-first" />
+		</colgroup>
+		<thead>
+		 <tr>
+		  <th scope="col">Instansi</th>
+		  <th scope="col">Jenjang</th>
+		  <th scope="col">Tahun Lulus</th>
+		  <th scope="col">Nilai Akhir</th>
+		 </tr>
+		</thead>
+		<tbody>
+		<tr><td>SDN Sisir 1 Batu</td><td>SD</td><td>2005</td><td>9.1</td></tr>
+		<tr><td>SMPN 1 Batu</td><td>SMP</td><td>2008</td><td>8.9</td></tr>
+		<tr><td>SMK Islam Batu</td><td>SMK</td><td>2011</td><td>9.2</td></tr>
+		</tbody>
+		</table>
+	   <div><label for="pengalaman">Pengalaman Kerja</label>
+	   </div>
+	   <table id="one-column-emphasis">
+		<colgroup>
+		 <col class="oce-first" />
+		</colgroup>
+		<thead>
+		 <tr>
+		  <th scope="col">Instansi</th>
+		  <th scope="col">Mulai</th>
+		  <th scope="col">Sampai</th>
+		  <th scope="col">Jabatan</th>
+		 </tr>
+		</thead>
+		<tbody>
+		<tr><td>Republik Media</td><td>2012</td><td>Sekarang</td><td>Karyawan</td></tr>
+		</tbody>
+		</table>
+	   <div><label for="pengalaman">Sertifikat/Penghargaan</label>
+	   </div>
+	   <table id="one-column-emphasis">
+		<colgroup>
+		 <col class="oce-first" />
+		</colgroup>
+		<thead>
+		 <tr>
+		  <th scope="col">Kegiatan</th>
+		  <th scope="col">Sebagai</th>
+		  <th scope="col">Waktu</th>
+		 </tr>
+		</thead>
+		<tbody>
+		<tr><td>LDKME</td><td>Peserta</td><td>2012</td></tr>
+		</tbody>
+		</table>
+		<div><label for="pengalaman">Pengalaman Organisasi</label>
+	   </div>
+	   <table id="one-column-emphasis">
+		<colgroup>
+		 <col class="oce-first" />
+		</colgroup>
+		<thead>
+		 <tr>
+		  <th scope="col">Nama Organisasi</th>
+		  <th scope="col">Jabatan</th>
+		  <th scope="col">Waktu</th>
+		 </tr>
+		</thead>
+		<tbody>
+		<tr><td>HME</td><td>Anggota Humas</td><td>2012</td></tr>
+		<tr><td>HME</td><td>Kadiv Humas</td><td>2013</td></tr>
+		</tbody>
+		</table>
+		<div><label for="pengalaman">Data Keluarga</label>
+	   </div>
+	   <table id="one-column-emphasis">
+		<colgroup>
+		 <col class="oce-first" />
+		</colgroup>
+		<thead>
+		 <tr>
+		  <th scope="col">Nama</th>
+		  <th scope="col">Status</th>
+		 </tr>
+		</thead>
+		<tbody>
+		<tr><td>Abdul Manab</td><td>Kepala Rumah Tangga</td></tr>
+		<tr><td>Isnaini</td><td>Ibu Rumah Tangga</td></tr>
+		<tr><td>Aris Yulmawan</td><td>Saudara Kandung</td></tr>
+		<tr><td>Shelynda Dwi PD</td><td>Saudara Kandung</td></tr>
+		<tr><td>Novi Trisman H</td><td>Saudara Kandung</td></tr>
+		<tr><td>Novi Adi Triswandi</td><td>Saudara Kandung</td></tr>
+		</tbody>
+		</table>
+    </form>
+    </div>
+  </body>
+</html>
+
+
+
