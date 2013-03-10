@@ -1,74 +1,138 @@
-<!DOCTYPE html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Webpages : webpages Novi Adi" />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Webpages</title>
+    <link rel="stylesheet" href="main.css" type="text/css" />
+    <script type="text/javascript" src="jquery-1.4.js"></script>
+	<script type="text/javascript" src="jquery.maskedinput.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+  	    $(':input:not([type="submit"])').each(function() {
+	        $(this).focus(function() {
+	            $(this).addClass('hilite');
+	        }).blur(function() {
+	            $(this).removeClass('hilite');});
+	     });
+      });  
+    </script>    
+    <style>   
+      .hilite{
+	       background-color: #FDECB2;
+      }
+    </style>   
+	<script type="text/javascript">
+      $(document).ready(function() {
+        $("#tgl").mask("99/99/9999")
+        $("#telp_skrg").mask("(9999) 999-9999")
+		$("#telp_asal").mask("(9999) 999-9999")
+		$("#hp").mask("+(62) 99999999999")
+      });
+    </script>
+	<script type="text/javascript">
+      $(document).ready(function() {
+            $('#deskripsi_diri').keyup(function() {
+                var len = this.value.length;
+                if (len >= 150) {
+                    this.value = this.value.substring(0, 150);
+                }
+                $('#hitung').text(150 - len);
+            });
+      });
+    </script>
   </head>
-
   <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/novi-adi/webpages">View on GitHub</a>
-
-          <h1 id="project_title">Webpages</h1>
-          <h2 id="project_tagline">webpages Novi Adi</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/novi-adi/webpages/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/novi-adi/webpages/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
+    <div class="demo" style="width: 600px;">
+    <form>
+	<h1 align="center">CURRICULUM VITAE</h1>
+	   <div><label for="nama">Nama</label>
+		      <input type="text" name="nama" id="nama">
+	   </div>
+	   <div><label for="tempat">Tempat Lahir</label>
+		      <input type="text" name="tempat" id="tempat">
+	   </div>
+	   <div><label for="tempat">Tanggal Lahir</label>
+		      <input type="text" id="tgl" size="14">
+	   </div>
+	   <div><label for="agama">Status Perkawinan</label>
+		      <select id="status" name="status">
+			      <option value="0">-- Pilih Status --</option>
+			      <option value="Belum Menikah">Belum Menikah</option>
+			      <option value="Menikah">Menikah</option>
+			      <option value="Duda">Duda</option>
+			      <option value="Janda">Janda</option>
+		      </select>
+	   </div>
+	   <div><label for="agama">Agama</label>
+		      <select id="agama" name="agama">
+			      <option value="0">-- Pilih Agama --</option>
+			      <option value="islam">Islam</option>
+			      <option value="katolik">Katolik</option>
+			      <option value="protestan">Protestan</option>
+			      <option value="hindu">Hindu</option>
+			      <option value="budha">Budha</option>
+		      </select>
+	   </div>
+	   <div><label for="alamat_skrg">Alamat Sekarang</label>
+		      <input type="text" name="alamat_skrg" id="alamat_skrg">
+	   </div>
+	   <div><label for="telp_skrg">Nomor Telepon</label>
+		      <input type="text" id="telp_skrg" size="14">
+	   </div>
+	   <div><label for="alamat_asal">Alamat Asal</label>
+		      <input type="text" name="alamat_asal" id="alamat_asal">
+	   </div>
+	   <div><label for="telp_asal">Nomor Telepon</label>
+		      <input type="text" id="telp_asal" size="14">
+	   </div>
+	   <div><label for="hp">Nomor HP</label>
+		      <input type="text" id="hp" size="14">
+	   </div>
+	   <div><label for="kelamin1">Kelamin</label>
+		      <input type="radio" name="kelamin" id="kelamin1" value="P"> Pria
+		      <input type="radio" name="kelamin" id="kelamin2" value="W"> Wanita
+	   </div>
+	   <div><label for="email">Email</label>
+		      <input type="text" name="email" id="email">
+	   </div>
+	   <div><label for="hobi">Hobi</label>
+		      <input type="checkbox"  id="hobi" name="hobi1"> Baca 
+		      <input type="checkbox"  id="hobi" name="hobi2"> Nonton 
+		      <input type="checkbox"  id="hobi" name="hobi3"> Musik
+	   </div>
+	   <div><label for="pendidikan_terakhir">Pendidikan Terakhir</label>
+		      <select id="pendidikan_terakhir" name="pendidikan_terakhir">
+			      <option value="0">-- Pendidikan Terakhir --</option>
+			      <option value="SD">SD</option>
+			      <option value="SMP">SMP/MI</option>
+			      <option value="SMA/SMK/MAN">SMA/SMK/MAN</option>
+			      <option value="PT">PT</option>
+		      </select>
+	   </div>
+	   <div><label for="riwayat_pend">Riwayat Pendidikan</label>
+		      <textarea id="riwayat_pend" name="riwayat_pend" cols="38" rows="8"></textarea>
+	   </div>
+	   <div><label for="pengalaman_kerja">Pengalaman Kerja</label>
+		      <textarea id="pengalaman_kerja" name="pengalaman_kerja" cols="38" rows="8"></textarea>
+	   </div>
+	   <div><label for="sertifikat">Sertifikat/Penghargaan</label>
+		      <textarea id="sertifikat" name="sertifikat" cols="38" rows="8"></textarea>
+	   </div>
+	   <div><label for="pengalaman_org">Pengalaman Organisasi</label>
+		      <textarea id="pengalaman_org" name="pengalaman_org" cols="38" rows="8"></textarea>
+	   </div>
+	   <div><label for="data_keluarga">Data Keluarga</label>
+		      <textarea id="data_keluarga" name="data_keluarga" cols="38" rows="8"></textarea>
+	   </div>
+	   <div><label for="deskripsi_diri">Deskripsi Diri</label>
+		      <textarea id="deskripsi_diri" name="deskripsi_diri" cols="38" rows="8"></textarea>
+			  
+	   </div>
+	   <div><label for="tes">""</label>
+		      <span id="hitung">150</span>  Karakter Tersisa.
+	   </div>
+	   <input type="submit" value="Proses">
+    </form>
     </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Webpages maintained by <a href="https://github.com/novi-adi">novi-adi</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
   </body>
 </html>
+
+
+
